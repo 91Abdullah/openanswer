@@ -104,10 +104,10 @@ INSERT INTO `users` (`user_name`,`pass`,`name`) VALUES ('admin',MD5('pass'),'Adm
 {{{
 INSERT INTO `user_perms` (`user_id`, `add_user`, `remove_user`, `modify_user`, `delete_user`, `add_client`, `remove_client`, 
 	  `modify_client`, `delete_client`, `xfer_call`, `xfer_other_call`, `barge_calls`, `record_calls`, `record_other_calls`, `park_call`, 
-	  `park_other_calls`, `play_record`, `delete_record`, 'add_queue', 'delete_queue', 'modify_queue', 'view_all_live_calls', 
-	  'view_team_live_calls', 'view_all_cdr', 'view_team_cdr', 'view_own_cdr', 'add_team', 'delete_team', 'remove_team', 'modify_team', 
-	  'view_user_details', 'add_role', 'delete_role', 'modify_role', 'view_client_details', 'view_all_agent_status', 'view_team_agent_status', 
-	  'view_all_live_stats', 'view_team_live_stats') VALUES(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
+	  `park_other_calls`, `play_record`, `delete_record`, `add_queue`, `delete_queue`, `modify_queue`, `view_all_live_calls`, 
+	  `view_team_live_calls`, `view_all_cdr`, `view_team_cdr`, `view_own_cdr`, `add_team`, `delete_team`, `remove_team`, `modify_team`, 
+	  `view_user_details`, `add_role`, `delete_role`, `modify_role`, `view_client_details`, `view_all_agent_status`, `view_team_agent_status`, 
+	  `view_all_live_stats`, `view_team_live_stats`) VALUES(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
 }}}
   # Open the config.php located in the root directory of where you unzipped the OA release.
   # Modify your settings accordingly.
