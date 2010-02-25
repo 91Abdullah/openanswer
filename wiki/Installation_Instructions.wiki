@@ -6,7 +6,7 @@ In this wiki, we will go through the necessary steps to install OpenAnswer on a 
 
 = System Requirements =
 
-<font color="red">*OpenAnswer wasn't designed to be used openly on the web between the OpenAnswer server, the Asterisk server, or a separate MySQL server.*</font>
+<font color="red">*OpenAnswer wasn't designed to be used openly on the web between the OpenAnswer server, the Asterisk server, or a separate MySQL server. It is designed to be used in a private network setting.*</font>
 
 === OpenAnswer Minimum System Requirements ===
 
