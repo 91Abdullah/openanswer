@@ -1,0 +1,87 @@
+#summary How to install OpenAnswer on a new *nix system.
+
+= Introduction =
+
+In this wiki, we will go through the necessary steps to install OpenAnswer on a clean Unix/Linux based system. We will go over system recommendations and minimum system requirements, asterisk configurations, and some modifications that customizes OpenAnswer to your call center environment.
+
+= About OpenAnswer =
+
+OpenAnswer is an open source software package that extends the functionality of standard PBX systems (specifically Asterisk) for call centers of all sizes. OpenAnswer is used as an internal application by Open Teleservices for their answering services. The entire application is written in PHP and javascript, and is designed from the ground up to be easily customized.
+
+= System Requirements =
+
+<font color="red">*OpenAnswer wasn't designed to be used openly on the web between the OpenAnswer server, the Asterisk server, or a separate MySQL server.*</font>
+
+=== OpenAnswer Minimum System Requirements ===
+
+*Server Software*
+  * Linux Distro 2.6.x kernel
+  * PHP5 w/ GD
+  * MySQL 5.x
+  * Apache 1.3+ w/mod_rewrite
+  * Asterisk 1.4.x+
+
+*Server Hardware*
+  * 1GHz+ Intel/AMD/PPC CPU
+  * 256MB RAM
+  * 10Mb NIC
+  * 5MB disk space
+
+*Client Software*
+  * ANY OS
+  * Browser: IE7+, FireFox 2.0+, Opera 9+, Safari 3+
+  * Any SIP/IAX2 compliant softphone
+
+*Client Hardware*
+  * 400MHz Intel/AMD CPU
+  * 128MB RAM
+  * 1024px x 768px screen resolution
+  * SIP/IAX2 IP Phone
+
+=== OpenAnswer Recommended System Requirements ===
+
+*OpenAnswer Server Software*
+  * Linux Distro 2.6.x kernel
+  * PHP5 w/ GD
+  * Apache 1.3+ w/mod_rewrite
+  * sshd
+
+*OpenAnswer Server Hardware*
+  * 2.4GHz+ Dual Core Intel/AMD CPU
+  * 2GB RAM
+  * 100Mb NIC
+  * 5MB disk space
+
+*MySQL Server Software*
+  * Linux Distro 2.6.x kernel
+  * MySQL 5.x
+  * sshd
+
+*MySQL Server Hardware*
+  * 2.4GHz+ Dual Core Intel/AMD CPU
+  * 4GB RAM
+  * 100Mb NIC
+  * 5GB disk space
+
+*Asterisk Server Software*
+  * Linux Distro 2.6.x kernel
+  * Asterisk 1.4.x+
+  * Asterisk GUI
+  * sshd
+
+*Asterisk Server Hardware*
+  * 2.4GHz+ Dual Core Intel/AMD CPU
+  * 4GB RAM
+  * 100Mb NIC
+  * 10GB disk space
+
+*Client Software*
+  * ANY OS
+  * Browser: IE8+, FireFox 3.0+, Opera 10+, Safari 4+
+  * Any SIP/IAX2 compliant softphone
+
+*Client Hardware*
+  * 1GHz Intel/AMD CPU
+  * 256MB RAM
+  * 1024px x 768px screen resolution
+  * SIP/IAX2 IP Phone
