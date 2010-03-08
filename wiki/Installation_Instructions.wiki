@@ -2,7 +2,7 @@
 
 = Introduction =
 
-In this wiki, we will go through the necessary steps to install OpenAnswer on a clean Unix/Linux based system. We will go over system recommendations and minimum system requirements, asterisk configurations, and some modifications that customizes OpenAnswer to your call center environment.
+In this wiki, we will go through the necessary steps to install OpenAnswer on a clean Unix/Linux based system. We will go over system recommendations and minimum system requirements, asterisk configurations, and some modifications that customize OpenAnswer to your call center environment.
 
 = System Requirements =
 
@@ -109,4 +109,4 @@ INSERT INTO `user_perms` (`user_id`, `add_user`, `remove_user`, `modify_user`, `
   # Modify your settings accordingly.
   # Point your browser to your OpenAnswer public directory, and login with the user name admin and default password _pass_
   # Open the _Change Settings_ drawer on the far left side of the screen to change your password.
-  # Enjoy some cofee, you're done with the installation.
+  # Enjoy some coffee, you're done with the installation.
