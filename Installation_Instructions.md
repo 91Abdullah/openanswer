@@ -1,0 +1,110 @@
+# Introduction #
+
+In this wiki, we will go through the necessary steps to install OpenAnswer on a clean Unix/Linux based system. We will go over system recommendations and minimum system requirements, asterisk configurations, and some modifications that customize OpenAnswer to your call center environment.
+
+# System Requirements #
+
+<font color='red'><b>OpenAnswer wasn't designed to be used openly on the web between the OpenAnswer server, the Asterisk server, or a separate MySQL server. It is designed to be used in a private network setting.</b></font>
+
+### OpenAnswer Minimum System Requirements ###
+
+**Server Software**
+  * Linux Distro 2.6.x kernel
+  * PHP5 w/ GD
+  * MySQL 5.x
+  * Apache 1.3+ w/mod\_rewrite
+  * Asterisk 1.4.x+
+
+**Server Hardware**
+  * 1GHz+ Intel/AMD/PPC CPU
+  * 256MB RAM
+  * 10Mb NIC
+  * 5MB disk space
+
+**Client Software**
+  * ANY OS
+  * Browser: IE7+, FireFox 2.0+, Opera 9+, Safari 3+
+  * Any SIP/IAX2 compliant softphone
+
+**Client Hardware**
+  * 400MHz Intel/AMD CPU
+  * 128MB RAM
+  * 1024px x 768px screen resolution
+  * SIP/IAX2 IP Phone
+
+### OpenAnswer Recommended System Requirements ###
+
+**OpenAnswer Server Software**
+  * Linux Distro 2.6.x kernel
+  * PHP5 w/ GD
+  * Apache 1.3+ w/mod\_rewrite
+  * sshd
+
+**OpenAnswer Server Hardware**
+  * 2.4GHz+ Dual Core Intel/AMD CPU
+  * 2GB RAM
+  * 100Mb NIC
+  * 5MB disk space
+
+**MySQL Server Software**
+  * Linux Distro 2.6.x kernel
+  * MySQL 5.x
+  * sshd
+
+**MySQL Server Hardware**
+  * 2.4GHz+ Dual Core Intel/AMD CPU
+  * 4GB RAM
+  * 100Mb NIC
+  * 5GB disk space
+
+**Asterisk Server Software**
+  * Linux Distro 2.6.x kernel
+  * Asterisk 1.4.x+
+  * Asterisk GUI
+  * sshd
+
+**Asterisk Server Hardware**
+  * 2.4GHz+ Dual Core Intel/AMD CPU
+  * 4GB RAM
+  * 100Mb NIC
+  * 10GB disk space
+
+**Client Software**
+  * ANY OS
+  * Browser: IE8+, FireFox 3.0+, Opera 10+, Safari 4+
+  * Any SIP/IAX2 compliant softphone
+
+**Client Hardware**
+  * 1GHz Intel/AMD CPU
+  * 256MB RAM
+  * 1024px x 768px screen resolution
+  * SIP/IAX2 IP Phone
+
+As you can see in the minimum requirements, OpenAnswer, MySQL, Apache, PHP, and Asterisk can all run comfortably with each other on the same server or separately on several virtual machine guests on a single host. However, this isn't recommended as Asterisk and MySQL can easily devour all CPU threads and memory. Furthermore, Apache will require more children processes (and thus more memory) to provide for more synchronous connections with agents and users. We recommend separating Asterisk, OpenAnswer/Apache, and MySQL into different servers or one really big virtualized server. The requirements for the clients are even smaller, particularly because OpenAnswer is designed to be as light as possible while in the browser. But to the actual installation.
+
+
+
+This installation assumes that you have prior knowledge with Apache, MySQL, and Asterisk. This guide won't guide you through setting up your web environment/phone system. We will assume that you have MySQL, Apache, and Asterisk configured to your liking. If you need help setting up your environment, hire a consultant because you're way over your head.
+
+
+## Install OpenAnswer ##
+  1. Download and unpack the lastest OpenAnswer release (OpenAnswer-X.XX.zip) into a directory on your web server.
+  1. Create a new database that we'll use for all of OpenAnswer's functions.
+  1. Import the OpenAnswer.sql file into your new database
+  1. While in your favorite MySQL editor, run the following two commands to create a super user.
+```
+INSERT INTO `users` (`user_name`,`pass`,`name`) VALUES ('admin',MD5('pass'),'Administrator');
+```
+```
+INSERT INTO `user_perms` (`user_id`, `add_user`, `remove_user`, `modify_user`, `delete_user`, `add_client`, `remove_client`,
+          `modify_client`, `delete_client`, `xfer_call`, `xfer_other_call`, `barge_calls`, `record_calls`, `record_other_calls`, `park_call`,
+          `park_other_calls`, `play_record`, `delete_record`, `add_queue`, `delete_queue`, `modify_queue`, `view_all_live_calls`,
+          `view_team_live_calls`, `view_all_cdr`, `view_team_cdr`, `view_own_cdr`, `add_team`, `delete_team`, `remove_team`, `modify_team`,
+          `view_user_details`, `add_role`, `delete_role`, `modify_role`, `view_client_details`, `view_all_agent_status`, `view_team_agent_status`,
+          `view_all_live_stats`, `view_team_live_stats`) VALUES(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
+```
+  1. Open the config.php located in the root directory of where you unzipped the OA release.
+  1. Modify your settings accordingly.
+  1. Point your browser to your OpenAnswer public directory, and login with the user name admin and default password _pass_
+  1. Open the _Change Settings_ drawer on the far left side of the screen to change your password.
+  1. Enjoy some coffee, you're done with the installation.

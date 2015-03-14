@@ -1,0 +1,2 @@
+# About OpenAnswer #
+OpenAnswer? is an open source software package that extends the functionality of standard PBX systems (specifically Asterisk) for call centers of all sizes. OpenAnswer? is used as an internal application by Open Teleservices for their answering services. The entire application is written in PHP and JavaScript?, and is designed from the ground up to be easily customized.
